@@ -7,7 +7,7 @@ const Card = styled.div`
   border: none;
   color: ${theme.palette.text.primary};
   width: 30%;
-  margin: 5px;
+  margin: ${theme.spacing(2)};
 `;
 
 export default Card;

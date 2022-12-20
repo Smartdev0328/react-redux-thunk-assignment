@@ -56,7 +56,7 @@ const App = () => {
   }, []);
 
   const handleEdit = (id: string, idx: number) => {
-    let name: string | null = prompt('New Tournament Name:');
+    let name: string | null = prompt('New Tournament Name:', data.tournaments[idx].name);
     var regEx = /^[a-z][a-z\s]*$/;
     while (name != null && !name?.match(regEx)) {
       name = prompt('New Tournament Name:');
@@ -111,8 +111,8 @@ const App = () => {
         </Center>
       ) : (
         <Main>
-          {data.tournaments.map((item, idx) => (
-            <Card key={idx}>
+          {data.tournaments.map((item,idx) => (
+            <Card key={item.id}>
               <H6>{item.name}</H6>
               <Text>Organizer:{item.organizer}</Text>
               <Text>Game:{item.game}</Text>
